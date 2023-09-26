@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
     <title>
         My first ever website
@@ -45,20 +45,45 @@
         <h1>MY FIRST EVER WEBSITE</h1>
         <h3>08/20/2023</h3>
         <div>
-            <button class="button-56">GET STARTED</button>
+            <button class="button-56" onclick="shoot()">Click me ;)</button>
             <button class="button-56">FOLLOW US</button>
         </div>
     </section>
 
     <script>
-        function w3_open() {
-            document.getElementById("mySidenav").style.display = "block";
+        const defaults = {
+            spread: 360,
+            ticks: 100,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+            shapes: ["heart"],
+            colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+        };
+
+        function shoot() {
+            confetti({
+                ...defaults,
+                particleCount: 50,
+                scalar: 2,
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 25,
+                scalar: 3,
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 10,
+                scalar: 4,
+            });
         }
 
-        function w3_close() {
-            document.getElementById("mySidenav").style.display = "none";
-        }
+
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
 </body>
 
 </html>
